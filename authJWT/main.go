@@ -95,7 +95,7 @@ func getTokenHandler(resp http.ResponseWriter, req *http.Request) {
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/getToken", getTokenHandler).Methods("POST")
-	router.HandleFunc("/healthcheck", HealthcheckHandler).Methods("GET")
+	router.HandleFunc("/healthcheck", HealthcheckHandler).Methods("POST")
 	http.Handle("/", router)
 	server := &http.Server{
 		Handler: router,
